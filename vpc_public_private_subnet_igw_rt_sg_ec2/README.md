@@ -1,51 +1,15 @@
 # VPC with Public/Private Subnets, IGW, Route Tables, Security Groups & EC2
 
-AWS infrastructure with VPC networking and EC2 instances using Terraform.
+This project demonstrates the creation of a complete AWS VPC setup with networking and EC2 instances using Terraform.
 
-## Infrastructure Components
+## Features
 
-- VPC with DNS support
-- Public subnet with Internet Gateway
-- Private subnet with NAT Gateway (optional)
-- Internet Gateway and Route Tables
-- Security Groups (public/private access)
-- EC2 instances (public, private, bastion)
-
-## Prerequisites
-
-- Terraform >= 1.0
-- AWS CLI configured
-- AWS SSH key pair
-
-## Setup Steps
-
-1. **Copy variables file**
-   ```bash
-   cp terraform.tfvars.example terraform.tfvars
-   ```
-
-2. **Configure variables** in `terraform.tfvars`:
-   - `aws_profile` - AWS CLI profile
-   - `key_name` - SSH key pair name (required)
-   - `project_name` - Project identifier
-
-3. **Initialize Terraform**
-   ```bash
-   terraform init
-   ```
-
-4. **Deploy infrastructure**
-   ```bash
-   terraform plan
-   terraform apply
-   ```
-
-## Key Variables
-
-- `aws_region` - Default: eu-central-1
-- `vpc_cidr` - Default: 10.0.0.0/16
-- `instance_type` - Default: t2.micro
-- `key_name` - Required
+- **VPC Setup**: Creates a VPC with DNS support.
+- **Subnets**: Configures public and private subnets.
+- **Internet Access**: Sets up an Internet Gateway for public subnets.
+- **Routing**: Configures route tables for traffic routing.
+- **Security**: Implements security groups for controlled access to resources.
+- **Compute**: Deploys EC2 instances for public, private, and bastion host setups.
 
 ## Outputs
 
